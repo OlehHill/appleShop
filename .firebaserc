@@ -1,0 +1,18 @@
+{
+  "targets": {
+    "gunners-880dc": {
+      "hosting": {
+        "iShop": [
+          "gunners-880dc"
+        ]
+      }
+    },
+    "appleshop-36efa": {
+      "hosting": {
+        "iShop": [
+          "appleshop-36efa"
+        ]
+      }
+    }
+  }
+}

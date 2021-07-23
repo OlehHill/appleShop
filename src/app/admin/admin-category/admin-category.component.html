@@ -1,0 +1,25 @@
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="categoryForm">
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="pathName" class="form-label">Path name:</label>
+            <input formControlName="pathName" type="text" class="form-control" id="pathName">
+          </div>
+          <div class="mb-3">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input class="form-control" type="file" id="formFile">
+          </div>
+          <div class="progress mb-3">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
+              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+          <button type="submit" class="btn btn-success">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
