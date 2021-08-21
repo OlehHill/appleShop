@@ -1,1 +1,73 @@
-<p>admin-product works!</p>
+<div class="container-fluid">
+    <div class="row">
+      <div class="col-12">
+        <form [formGroup]="productForm" (ngSubmit)="submitProductForm()">
+            <select class="form-select mb-3">
+                <option [ngValue]="null" selected disabled>Choose category</option>
+                <option [ngValue]="cat" *ngFor="let cat of adminCategories">
+                    {{ cat.name }}
+                </option>
+
+              </select>
+          <div class="mb-3">
+            <label for="name" class="form-label">Name:</label>
+            <input formControlName="name" type="text" class="form-control" id="name">
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description:</label>
+            <textarea formControlName="description" class="form-control" id="description" cols="30" rows="3"></textarea>
+          </div>
+          <div class="mb-3">
+            <label for="price" class="form-label">Price:</label>
+            <input formControlName="price" type="number" class="form-control" id="price">
+          </div>
+          <div class="mb-3" *ngIf="!imageStatus">
+            <label for="formFile" class="form-label">Default file input example</label>
+            <input (change)="uploadFile($event)" class="form-control" type="file" id="formFile">
+          </div>
+          <div class="progress mb-3" *ngIf="!imageStatus">
+            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
+            [style.width]="(uploadPercent | async) + '%'"
+            aria-valuenow="0" 
+            aria-valuemin="0" 
+            aria-valuemax="100"></div>*
+          </div>
+          <div class="image-box" *ngIf="imageStatus">
+            <img width="100px" [src]="image" alt="">
+            <button (click)="deleteFile()" type="button" class="btn btn-danger">Delete</button>
+          </div>
+          <button [disabled]="productForm.invalid && !image" type="submit" class="btn btn-success">Create</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">Category</th>
+      <th scope="col">Price</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let prod of adminProduct">
+      <th>{{ prod.id }}</th>
+      <td>{{ prod.name }}</td>
+      <td>{{ prod.category?.name}}</td>
+      <td>{{ prod.price }} usd</td>
+      <td>
+        <img [src]="prod.image" alt="" width="100px">
+      </td>
+      <td style="min-width: 50px;">
+        <button (click)="editProduct(prod)" type="button" class="btn btn-warning mr-2">Edit</button>
+        <button (click)="deleteProduct(prod)" type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

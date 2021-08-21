@@ -1,1 +1,28 @@
-<p>footer works!</p>
+<footer class="footer">
+    <div class="footer_container">
+        <section class="footer_section"><img class="apple_icon" src="../../assets/apple_icon2.jpg"></section>
+        <section class="footer_section products"><h2 [routerLink]="[ '/home' ]" routerLinkActive="active">Products</h2>
+            <p [routerLink]="[ '/iphone' ]" routerLinkActive="active">iPhone</p>  
+            <p [routerLink]="[ '/accessories' ]" routerLinkActive="active">Accessories</p> 
+            <p [routerLink]="[ '/ipad' ]" routerLinkActive="active">iPad</p> 
+            <p [routerLink]="[ '/mac' ]" routerLinkActive="active">Mac</p>
+            <p [routerLink]="[ '/watch' ]" routerLinkActive="active">Apple Watch </p>
+            <p [routerLink]="[ '/gadgets' ]" routerLinkActive="active">Gadgets</p>  
+        </section>
+
+        <section class="footer_section social">
+            <h2>Соціальні мережі</h2>
+            <a class="social_icon"  href="https://www.instagram.com/apple/" target="_blank"><img src="../../assets/insta_icon.png" alt=""></a>
+            <a  class="social_icon" href="https://twitter.com/apple/" target="_blank"><img  src="../../assets/twitter_icon.png" alt=""></a>
+            <a class="social_icon" href="https://www.youtube.com/user/Apple" target="_blank"> <img src="../../assets/youtube_icon.png" alt=""></a>
+        </section>
+
+        <section class="footer_section info">
+            <h2>Для зв’язку і питань:</h2>
+            <p>appleshop@gmail.com</p>
+            <p>0 800 33 22 1 (з 10:00 до 22:30)</p>
+            <p>Детальніше тут: https://ishop.com/</p>
+        </section>
+        
+    </div>
+</footer>

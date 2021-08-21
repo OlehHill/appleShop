@@ -24,6 +24,9 @@ import { AdminProductComponent } from './admin/admin-product/admin-product.compo
 import { AngularFireModule } from '@angular/fire';
 import { AngularFireStorageModule } from '@angular/fire/storage';
 import { environment } from '../environments/environment';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
+
 
 
 
@@ -43,7 +46,10 @@ import { environment } from '../environments/environment';
     BasketComponent,
     AdminComponent,
     AdminCategoryComponent,
-    AdminProductComponent
+    AdminProductComponent,
+    ProductComponent,
+    ProductDetailsComponent,
+  
 
 
 

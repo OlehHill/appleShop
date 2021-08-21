@@ -2,7 +2,7 @@ export interface CategoryProduct {
     name: string;
     pathName: string;
     image: string;
-    id?: number;
+    id?: number| any;
 }
 
 export class Category implements CategoryProduct {

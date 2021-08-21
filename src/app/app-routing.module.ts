@@ -11,6 +11,8 @@ import { BasketComponent } from './pages/basket/basket.component';
 import { AdminComponent } from './admin/admin.component';
 import { AdminCategoryComponent } from './admin/admin-category/admin-category.component';
 import { AdminProductComponent } from './admin/admin-product/admin-product.component';
+import { ProductComponent } from './pages/product/product.component';
+import { ProductDetailsComponent } from './pages/product-details/product-details.component';
 
 
 
@@ -18,12 +20,14 @@ import { AdminProductComponent } from './admin/admin-product/admin-product.compo
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'home' },
   { path: 'home', component: HomeComponent },
-  { path: 'iphone', component: IphoneComponent },
-  { path: 'ipad', component: IpadComponent },
-  { path: 'mac', component: MacComponent },
-  { path: 'watch', component: WatchComponent },
-  { path: 'gadgets', component: GadgetsComponent },
-  { path: 'accessories', component: AccessoriesComponent },
+  { path: 'menu/:category', component: ProductComponent },
+  { path: 'menu/:category/:id', component: ProductDetailsComponent },
+  // { path: 'iphone', component: IphoneComponent },
+  // { path: 'ipad', component: IpadComponent },
+  // { path: 'mac', component: MacComponent },
+  // { path: 'watch', component: WatchComponent },
+  // { path: 'gadgets', component: GadgetsComponent },
+  // { path: 'accessories', component: AccessoriesComponent },
   { path: 'basket', component: BasketComponent },
   { path: 'admin', component: AdminComponent, children: [
       { path: '', pathMatch: 'full', redirectTo: 'home' },

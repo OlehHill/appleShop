@@ -1,3 +1,51 @@
 {
-    "category": [""]
+  "category": [
+    {
+      "name": "iPad",
+      "pathName": "ipad",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fipad_category.png?alt=media&token=f56d9c32-886a-4dc0-bee4-701527876282",
+      "id": 2
+    },
+    {
+      "name": "Mac",
+      "pathName": "mac",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fmac_category.png?alt=media&token=859e2305-e055-4559-affe-3fd84cd99b1f",
+      "id": 3
+    },
+    {
+      "name": "Apple Watch",
+      "pathName": "watch",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fwatch_category.png?alt=media&token=393d75bb-25a4-4ec8-a267-1d5ebf3abe92",
+      "id": 4
+    },
+    {
+      "name": "Asseccories",
+      "pathName": "asseccories",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fasseccories_category.jpg?alt=media&token=3fb76b1d-fd97-4b09-aa72-5faa022c2392",
+      "id": 5
+    },
+    {
+      "name": "Gadgets",
+      "pathName": "gadgets",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2F446103_632_canny_pic.jpg?alt=media&token=e9d48ab9-b01a-474a-afe7-7fe693564454",
+      "id": 6
+    },
+    {
+      "name": "Iphone",
+      "pathName": "iphone",
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fiphone_category%20%E2%80%93%20%D0%BA%D0%BE%D0%BF%D1%96%D1%8F.png?alt=media&token=b74b4b4d-7f59-4303-9dd7-6c3bb1798cbc",
+      "id": 7
+    }
+  ],
+  "products": [
+    {
+      "category": null,
+      "name": "iPhone 11 Pro 256gb",
+      "description": "iphone 11 pro",
+      "price": 499,
+      "image": "https://firebasestorage.googleapis.com/v0/b/appleshop-36efa.appspot.com/o/images%2Fiphone_11_pro_mg_2_2_4.jpeg?alt=media&token=f6f7f375-bfff-4689-aa31-91daf1b0f258",
+      "count": 1,
+      "id": 1
+    }
+  ]
 }

@@ -1,25 +1,59 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="col-12">
-        <form [formGroup]="categoryForm">
-          <div class="mb-3">
-            <label for="name" class="form-label">Name:</label>
-            <input formControlName="name" type="text" class="form-control" id="name">
-          </div>
-          <div class="mb-3">
-            <label for="pathName" class="form-label">Path name:</label>
-            <input formControlName="pathName" type="text" class="form-control" id="pathName">
-          </div>
-          <div class="mb-3">
-            <label for="formFile" class="form-label">Default file input example</label>
-            <input class="form-control" type="file" id="formFile">
-          </div>
-          <div class="progress mb-3">
-            <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 100%"
-              aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
-          </div>
-          <button type="submit" class="btn btn-success">Create</button>
-        </form>
-      </div>
+  <div class="row">
+    <div class="col-12">
+      <form [formGroup]="categoryForm" (ngSubmit)="submitCategoryForm()">
+        <div class="mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input formControlName="name" type="text" class="form-control" id="name">
+        </div>
+        <div class="mb-3">
+          <label for="pathName" class="form-label">Path name:</label>
+          <input formControlName="pathName" type="text" class="form-control" id="pathName">
+        </div>
+        <div class="mb-3" *ngIf="!imageStatus">
+          <label for="formFile" class="form-label">Default file input example</label>
+          <input (change)="uploadFile($event)" class="form-control" type="file" id="formFile">
+        </div>
+        <div class="progress mb-3" *ngIf="!imageStatus">
+          <div class="progress-bar progress-bar-striped bg-success" role="progressbar" 
+          [style.width]="(uploadPercent | async) + '%'"
+          aria-valuenow="0" 
+          aria-valuemin="0" 
+          aria-valuemax="100"></div>*
+        </div>
+        <div class="image-box" *ngIf="imageStatus">
+          <img width="100px" [src]="image" alt="">
+          <button (click)="deleteFile()" type="button" class="btn btn-danger">Delete</button>
+        </div>
+        <button [disabled]="categoryForm.invalid && !image" type="submit" class="btn btn-success">Create</button>
+      </form>
     </div>
   </div>
+</div>
+<hr>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">Name</th>
+      <th scope="col">URL</th>
+      <th scope="col">Image</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cat of adminCategories">
+      <th>{{ cat.id }}</th>
+      <td>{{ cat.name }}</td>
+      <td>{{ cat.pathName }}</td>
+      <td>
+        <img [src]="cat.image" alt="" width="60px">
+      </td>
+      <td style="min-width: 200px;">
+        <button (click)="editCategory(cat)" type="button" class="btn btn-warning mr-2">Edit</button>
+        <button (click)="deleteCategory(cat)" type="button" class="btn btn-danger">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
