@@ -1,1 +1,8 @@
 <p>product works!</p>
+<main class="main_ipad"></main>
+<div class="product" *ngFor="let prod of products">
+    <h1>{{prod.name}}</h1>
+    <p>{{prod.description}}</p>
+    <img [src]="prod.image" alt="">
+    <p>{{prod.price}}</p>
+</div>

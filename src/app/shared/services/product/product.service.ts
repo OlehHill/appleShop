@@ -16,8 +16,7 @@ export class ProductService {
     return this.http.get<Array<Product>>(this.url);
   }
   getAllByCategory(categoryName:string): Observable<Array<Product>> {
-    return this.http.get<Array<Product>>(`${this.url}
-    ?category.pathName=${categoryName}`);
+    return this.http.get<Array<Product>>(`${this.url}?category.pathName=${categoryName}`);
   }
 
   getOne(id: number): Observable<Product> {
